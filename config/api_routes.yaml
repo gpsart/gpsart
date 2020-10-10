@@ -1,0 +1,34 @@
+route_list:
+  path: v1/routes
+  controller: App\Api\V2\Controller\RouteController::routes
+  methods: GET
+
+route:
+  path: v1/routes/{id<.{36}>}
+  controller: App\Api\V2\Controller\RouteController::route
+  methods: GET
+
+route_create:
+  path: v1/routes
+  controller: App\Api\V1\Controller\CreateRouteController::create
+  methods: POST|OPTIONS
+
+activity_create:
+  path: v1/routes/{routeId<.{36}>}/activities
+  controller: App\Api\V1\Controller\CreateActivityController::create
+  methods: POST|OPTIONS
+
+route_list2:
+  path: v2/routes
+  controller: App\Api\V2\Controller\RouteController::routes
+  methods: GET
+
+route2:
+  path: v2/routes/{id<.{36}>}
+  controller: App\Api\V2\Controller\RouteController::route
+  methods: GET
+
+route_content2:
+  path: v2/routes/{id<.{36}>}/content
+  controller: App\Api\V2\Controller\RouteController::content
+  methods: GET

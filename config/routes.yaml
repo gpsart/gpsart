@@ -1,3 +1,15 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+api:
+  prefix: /api
+  resource: './api_routes.yaml'
+
+home:
+  path: /
+  controller: App\Controller\HomeController::home
+
+redirect1:
+  path: /activity-routes/{id<.+>}
+  controller: App\Controller\HomeController::redirectToHome
+
+redirect2:
+  path: /how-it-works
+  controller: App\Controller\HomeController::home
